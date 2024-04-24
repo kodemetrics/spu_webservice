@@ -1,0 +1,17 @@
+# Dependencies
+https://crates.io/crates/diesel
+cargo install diesel_cli
+https://diesel.rs/guides/getting-started
+
+diesel setup
+diesel migration generate create_enumerations
+diesel migration run
+
+rustc --version
+cargo test # run all test
+cargo test --test unit_test # run only unit_test.rs
+cargo test --test integration_test # run only unit_test.rs
+
+# cargo run
+cargo watch -x run
+cargo watch -q -c -x 'run -q'
