@@ -114,3 +114,17 @@ pub struct Enumeration {
     pub additional_photo1_comment: Option<String>,
     pub additional_photo2_comment: Option<String>,
 }
+
+
+impl  Enumeration {
+    pub fn save_enumeration(data : Enumeration) -> i32{
+        let device_id = 0;
+        let mut new_enumeration = data;
+        new_enumeration.photo_of_premise = Option::from(convertBase64ToFile());
+        device_id
+    }
+}
+
+fn convertBase64ToFile() -> String{
+    String::new()
+}
