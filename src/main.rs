@@ -11,7 +11,9 @@ warnings
 
 mod models;
 mod routes;
+mod utils;
 //mod database;
+//mod schema;
 
 use std::sync::Mutex;
 use models::enumeration::Enumeration;
@@ -21,11 +23,11 @@ use routes::{config::config};
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 use env_logger::Logger;
 
+use utoipa_swagger_ui::SwaggerUi;
 
 struct AppState {
     user_list: Mutex<Vec<User>>,
 }
-
 
 #[get("/")]
 async fn index() -> impl Responder {
@@ -52,6 +54,9 @@ async fn main() -> std::io::Result<()> {
     let app_data = web::Data::new(AppState {
         user_list: Mutex::new(vec![])
     });
+
+    // struct ApiDoc;
+    // let openapi = ApiDoc::openapi();
 
     HttpServer::new(move || {
         App::new()

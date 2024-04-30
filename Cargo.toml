@@ -6,11 +6,23 @@ edition = "2021"
 [dependencies]
 
 actix-web = "4"
+chrono = "0.4"
 diesel = { version = "2.1.0", features = ["mysql", "serde_json","32-column-tables","chrono"] }
 serde = { version = "1.0.152", features = ["derive"] }
 serde_json = "1.0.93"
 dotenv = "0.15.0"
 env_logger = "0.8"
 log = "^0.4"
+base64 = "0.13.0"
+image = "0.23"
+
+reqwest = "0.11.18"
+futures = "0.3"
+tokio = { version = "1", features = ["full"] }
 
 utoipa-swagger-ui = { version = "6", features = ["actix-web"] }
+amiquip = "0.4"
+validator = { version = "0.16", features = ["derive"] }
+
+
+
