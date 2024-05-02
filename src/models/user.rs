@@ -8,6 +8,10 @@ use std::io::Write;
 use base64::{decode, encode};
 use serde::{Deserialize, Serialize};
 
+enum Roles{
+    Subscriber,Admin,Editor,
+}
+
 
 #[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct User {
